@@ -1,0 +1,232 @@
+<!--
+    Powered By nodePPT - This is probably the best web presentation tool so far!
+    version: 1.4.2
+    site: https://github.com/ksky521/nodePPT
+    date: 
+-->
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>利用NodePPT构建狂拽炫酷吊炸天的PPT - By 刘彪</title>
+    <link rel="stylesheet" media="all" href="./css/nodeppt.css">
+    <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="./css/phone.css">
+    
+    <link rel="stylesheet" href="./js/highlight/styles/monokai_sublime.css">
+    <link rel="stylesheet" href="./css/font-awesome.css">
+    
+<link rel="stylesheet" href="./css/theme.moon.css">
+</head>
+<body>
+<div class="slides">
+    <slides id="container">
+        <slide class="slide"><section class="slide-wrapper"><article class="flexbox vcenter">
+<h1>利用NodePPT构建狂拽炫酷吊炸天的PPT</h1>
+<h2>刘彪</h2>
+<h2>2017年1月6日</h2>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>什么是NodePPT</h2>
+
+</hgroup><article>
+
+<p>这可能是迄今为止最好的网页版演示库</p>
+<ul>
+<li>基于GFM的markdown语法编写</li>
+<li>支持html混排，再复杂的demo也可以做！</li>
+<li>支持多个皮肤：colors-moon-blue-dark-green-light</li>
+<li>实现watch功能nodeppt start -w</li>
+<li>支持20种转场动画，可以设置单页动画</li>
+<li>支持单页背景图片</li>
+<li>多种模式：overview模式，双屏模式，socket远程控制，摇一摇换页，使用ipad/iphone控制翻页更酷哦~</li>
+<li>可以使用画板，双屏同步画板内容！可以使用note做备注</li>
+<li>支持语法高亮，自由选择highlight样式</li>
+<li>可以单页ppt内部动画，单步动画</li>
+<li>支持进入/退出回调，做在线demo很方便</li>
+<li>支持事件update函数，查看demo</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<h2>样例展示</h2>
+<p>双屏控制： <a href="http://qdemo.sinaapp.com/?_multiscreen=1" target="_blank">http://qdemo.sinaapp.com/?_multiscreen=1</a></p>
+<p>手机百度前端之路：<a href="http://qdemo.sinaapp.com/box-fe-road.htm" target="_blank">http://qdemo.sinaapp.com/box-fe-road.htm</a></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>环境配置</h2>
+
+</hgroup><article>
+
+<h3>安装NodeJS</h3>
+<p>Node.js中文网下载对应版本安装：</p>
+<p><a href="http://nodejs.cn/download/" target="_blank">http://nodejs.cn/download/</a></p>
+<h3>安装NodePPT</h3>
+<pre><code>npm install -g nodeppt
+</code></pre>
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>必备的Markdown语法</h2>
+
+</hgroup><article>
+
+<h3>标题</h3>
+<p>标题由“#”开头，“#”一个“#”代表一级标题，“##”两个“#”代表二级标题，以此类推。</p>
+<h3>代码</h3>
+<p>代码块以“<code>”开头，同样也以“</code>”结尾。</p>
+<h3>列表</h3>
+<p>无序列表的列表项目钱加“-”“+”或“*”，有序列表的列表项钱加“1. …… n.”，也可全部为“1.”，实际上有序列表的显示并不使用Markdown源码中的数字，而是紧紧需要数字来表示有序而已。</p>
+<p>更多Markdown语法可参见《Markdown语法说明（简体中文版）》：</p>
+<p><a href="http://wowubuntu.com/markdown/" target="_blank">http://wowubuntu.com/markdown/</a></p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>创建第一个PPT</h2>
+
+</hgroup><article>
+
+<pre><code>nodeppt create PPT文件名（无需扩展名，默认添加.md扩展名）
+</code></pre>
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>NodePPT语法</h2>
+
+</hgroup><article>
+
+<h3>重要语法</h3>
+<p>title:标题</p>
+<p>speaker：演讲者</p>
+<p>url：URL</p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<p>transition:转场效果，推荐cards，对无障碍支持好。可选的转场效果有：</p>
+<ul>
+<li>kontext</li>
+<li>vkontext</li>
+<li>circle</li>
+<li>earthquake</li>
+<li>cards</li>
+<li>glue</li>
+<li>stick</li>
+<li>move</li>
+<li>newspaper</li>
+<li>slide</li>
+<li>slide2</li>
+<li>slide3</li>
+<li>horizontal3d</li>
+<li>horizontal</li>
+<li>vertical3d</li>
+<li>zoomin</li>
+<li>zoomout</li>
+<li>pulse</li>
+</ul>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><article>
+<p>方括号slide：换页</p>
+<h3>更多语法</h3>
+<p>想要获取NodePPT的更多帮助信息，可上网查阅或浏览以下位置的Demo官方样例：</p>
+<p>C:\Users\Administrator\AppData\Roaming\npm\node_modules\nodeppt\ppts</p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>NodePPT效果预览</h2>
+
+</hgroup><article>
+
+<pre><code>nodeppt start -d ppt所在目录 -p 端口号
+</code></pre>
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>PPT导出</h2>
+
+</hgroup><article>
+
+<h3>HTML导出</h3>
+<p>导出全部，包含css、js、img，默认在publish文件夹：</p>
+<pre><code>nodeppt generate MD文件名 -a
+</code></pre><p>导出全部，包含css、js、img，指定存放文件夹：</p>
+<pre><code>nodeppt generate MD文件名 导出路径 -a
+</code></pre><h3>导出PDF</h3>
+<p>Chrome浏览器，URL末尾追加“print=1”后，Ctrl+P打印，选择导出PDF。</p>
+
+</article></section></slide>
+<slide class="slide"><section class="slide-wrapper"><hgroup>
+<h2>亲自试一试</h2>
+
+</hgroup><article>
+
+<p>你心动了吗？心动不如行动，亲自试一试吧！</p>
+
+</article></section></slide>
+        
+
+        <!-- <slide class="slide logoslide dark nobackground">
+            <article class="flexbox vcenter">
+                <h2 style="color: white;">Powered By nodePPT v1.4.2</h2>
+            </article>
+        </slide> -->
+        <div class="slideTip" id="tip"></div>
+    </slides>
+</div>
+<canvas id="drawBoard" class="draw-board" width="900" height="700"></canvas>
+<div class="progress"><span id="progress"></span></div>
+<div id="_buttons">
+    <div class="_btn-box" id="_btn-box" style="display:none;">
+        <button class="fa fa-arrow-circle-left" id="_btn-prev"></button>
+        <button class="fa fa-arrow-circle-right" id="_btn-next"></button>
+        <button class="fa fa-paint-brush" id="_btn-brush"></button>
+        <button class="fa fa-compress" id="_btn-overview" data-toggle="fa fa-expand"></button>
+    </div>
+    <button class="fa fa-bars" id="_btn-bar"  data-toggle="fa fa-close"></button>
+</div>
+<script src="./js/mixjs/lib/mix.0.3.0.min.js"></script>
+<script>
+var base = location.protocol + '//' + location.host;
+
+var path = (location.pathname + '#').split('/').filter(function(v){
+    return !!v;
+});
+path.pop();
+path = path.join('/');
+MixJS.config({
+    baseURL: [ base, path, 'js'].join('/')+'/'
+});
+
+</script>
+<script src="./js/mixjs/lib/event/broadcast.js"></script>
+<script src="./js/nodeppt.js"></script>
+<script>
+Slide.init({
+    containerID: 'container',
+    drawBoardID: 'drawBoard',
+    slideClass: '.slide',
+    buildClass: '.build',
+    progressID: 'progress',
+    transition: 'cards',
+    width: 1100,
+    dir: './',
+    
+    //打开下面的注释就开启postMessage方式
+    //访问网址127.0.0.1:8080/ppt/demo#client
+    control:{
+        type: 'postMessage',
+        args:{
+            isControl:  false
+        }
+    },
+    
+    tipID: 'tip'
+});
+MixJS.loadJS('highlight/highlight.pack.js',function(){
+    hljs.tabReplace = '  ';
+    hljs.initHighlightingOnLoad();
+});
+</script>
+
+
+<!--placeholder-->
+</body>
+</html>
